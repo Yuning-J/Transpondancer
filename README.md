@@ -30,3 +30,7 @@ And sliced pictures here:
 
 **Video Scene Structure** include the spatial position (meaning if the human object is in the left, the right or other places of the scenes), and the human actions such as head movements, hand actions and other body poses. 
 
+## References
+
+* [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
+
