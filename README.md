@@ -12,7 +12,8 @@
 
 **Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here
 ![ballet dance](https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif) )
-And sliced 
+
+And sliced pictures here: 
 
 **Step2:** Classification of human poses and movements. 
 
