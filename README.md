@@ -18,7 +18,7 @@ And sliced pictures in order here:
 
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
 
-**Step2:** Classification of human poses and movements. 
+**Step2:** Classification of human poses and movements, using point light display. 
 
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited2.png" width="120" height="150">
 
