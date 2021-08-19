@@ -14,8 +14,8 @@
 
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="170" height="170">
 
-
 And sliced pictures here: 
+
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150">
 
 **Step2:** Classification of human poses and movements. 
