@@ -10,9 +10,13 @@
 
 ## Methods
 
-**Step1:** Slicing the dancing video dataset. (e.g. a slice of ballet dance here
+**Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here
 ![ballet dance](https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif) )
+And sliced 
 
+**Step2:** Classification of human poses and movements. 
+
+**Step3:** Biological motion perception, or correlation between human movement to textual descriptions. 
 
 ## Video Data
 
