@@ -24,6 +24,8 @@ And sliced pictures in order here:
 
 **Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced ballent pose is "assemble")
 
+**Step4:** Generate a step-by-step dance guide. 
+
 ## Video Data
 
 **Video Scene Elements** include static and dynamic objects. Static objects refer to dancing props like a phone, a door, un umbrella, etc., as well as background props like a table and a door. Dynamic objects include a person and his/her bodyparts or an animal. 
