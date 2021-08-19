@@ -22,7 +22,7 @@ And sliced pictures here:
 
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited2.png" width="120" height="150">
 
-**Step3:** Biological motion perception, or correlation between human movement to textual descriptions. 
+**Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced ballent pose is "assemble")
 
 ## Video Data
 
