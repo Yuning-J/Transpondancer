@@ -11,11 +11,10 @@
 ## Methods
 
 **Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here)
-![ballet dance](https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif) 
+<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="170" height="170">
 
-And sliced pictures here: <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="100" height="100">
 
-![ballet slice 1](https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png)
+And sliced pictures here: <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150">
 
 **Step2:** Classification of human poses and movements. 
 
