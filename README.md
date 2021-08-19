@@ -3,12 +3,16 @@
 **Transpdancer** is...
 
 ## Introduction
-Step1: Slicing the dancing video dataset. (e.g. a slice of ballet dance here
-![ballet dance](https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif) )
 
 **Objective:**
 
 **Challenge:**
+
+## Methods
+
+**Step1:** Slicing the dancing video dataset. (e.g. a slice of ballet dance here
+![ballet dance](https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif) )
+
 
 ## Video Data
 
