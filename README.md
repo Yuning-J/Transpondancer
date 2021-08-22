@@ -1,6 +1,6 @@
-# Transpdancer
+# Transpondancer
 
-**Transpdancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. 
+**Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. 
 
 ## Introduction
 
