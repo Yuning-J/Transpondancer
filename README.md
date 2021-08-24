@@ -36,3 +36,9 @@ And sliced pictures in order here:
 
 * [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
 
+
+## ToDo:
+
+* Make sure every image is of same size, if not then modify the datahandler to do this.
+* Run the test script to check if everything is working
+* Complete the training loop and start training
