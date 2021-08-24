@@ -37,9 +37,9 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(batch_size))) #2 is the
 
 """
     If you run  the script, it will return 3 outputs. 
-    
+
     1. displays the images
-    2. Torch size such as ([2 ,1 ,48, 48)] where 2 is the batch size of images that are being loaded,
-        1 is the grayscale images and 48*48 is the image size.
+    2. Torch size such as ([2 ,1 ,x, x)] where 2 is the batch size of images that are being loaded,
+        1 is the grayscale images and x*x is the image size.
     3. Classes of the images
     """
