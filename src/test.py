@@ -7,15 +7,14 @@ import numpy as np
 import datahandler as dh
 
 #pre_preocessor function takes absolute path and batch_size as arguments
-batch_size = 2
+batch_size = 4
 train_loader, test_loader = dh.pre_processor(
-                                'path_to_dataset',
-                                batch_size)
+                                'Dataset/', batchsize=batch_size)
 
 # print(train_loader)
 # print(test_loader)
 
-classes = ('arabesque', 'Pirouette', 'Battement', 'Gran_Pliet', 'Assemble')
+classes = ('Arabesquae', 'Battement', 'Grand_Plié', 'Pirouette')
 
 
 def imshow(img):
@@ -26,13 +25,13 @@ def imshow(img):
 
 
 # get some random training images
-dataiter = iter(train_loader)
-images, labels = dataiter.next()
-print(images.shape)
+# dataiter = iter(train_loader)
+images, labels = next(iter(train_loader))
+# print(images.shape)
 # show images
 imshow(torchvision.utils.make_grid(images))
 # print labels
-print(' '.join('%5s' % classes[labels[j]] for j in range(batch_size))) #2 is the batch_size
+print(' '.join('%5s' % classes[labels[j]] for j in range(batch_size)))
 
 
 """
