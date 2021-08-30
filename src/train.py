@@ -19,7 +19,7 @@ print(f"Current device: ", device)
 
 
 train_loader, test_loader = dh.pre_processor(
-                                '../Dataset/',
+                                '../Dataset',
                                 batchsize= batch_size)
 
 classes = ('Arabesquae', 'Battement', 'Grand_Plié', 'Pirouette')
@@ -27,10 +27,12 @@ classes = ('Arabesquae', 'Battement', 'Grand_Plié', 'Pirouette')
 
 model = CNN().to(device)
 
-(summary(model, (1, 90, 160))) # prints the summary of the model. x, x is image size
+# print(next(model.parameters()).is_cuda)
+
+# (summary(model, (1, 90, 160))) # prints the summary of the model. 90,160 is image size
 
 
-optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=0.9)
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 #scheduler = ReduceLROnPlateau(optimizer, 'max', factor = 0.5, verbose=True)
 criterion = nn.CrossEntropyLoss()
 
@@ -46,23 +48,28 @@ for e in range(epochs):
     print(f"Epoch: {e+1}/{epochs}")
 
     for i, (images, labels) in enumerate(iter(train_loader)):
-        
-        # print(images.shape())
-        # images = images.reshape(-1, 48*48).to(device)
 
-        images = images.to(device)
+        # print(type(images))
+        # print(type(labels))
+        
+        images = torch.stack(images).to(device)
+        # print(images.is_cuda)
         labels = labels.to(device)
+        # print(labels.is_cuda)
 
         # reset the grdients
         optimizer.zero_grad()
         
         output = model(images)   # 1) Forward pass
         loss = criterion(output, labels) # 2) Compute loss
+        # print(loss.is_cuda)
+
         loss.backward()                  # 3) Backward pass
         optimizer.step()                 # 4) Update model
         
         running_loss += loss.item()
         
+        # print(i)
         if i % print_every == 0:
             print (f'Epoch [{e+1}/{epochs}], Step [{i+1}/{n_total_steps}], Loss: {loss.item():.4f}')
             print(f"\tIteration: {i}\t Loss: {running_loss/print_every:.4f}")
@@ -70,42 +77,62 @@ for e in range(epochs):
             
     train_loss.append(running_loss/images.shape[0])
 
-print('Finished Training')
-PATH = './cnn.pth'
-torch.save(model.state_dict(), PATH)
-
-
-with torch.no_grad():
     correct = 0
     total = 0
-    n_class_correct = [0 for i in range(7)]
-    n_class_samples = [0 for i in range(7)]
+    # since we're not training, we don't need to calculate the gradients for our outputs
+    with torch.no_grad():
+        for i, (images, labels) in enumerate(iter(test_loader)):
+            
+            images = torch.stack(images).to(device)
+            labels = labels.to(device)
 
-    for i, (images, labels) in enumerate(iter(test_loader)):
+            outputs = model(images)
+            v_loss = criterion(outputs, labels)
+            # the class with the highest energy is what we choose as prediction
+            _, predicted = torch.max(outputs.data, 1)
+            total += labels.size(0)
+            correct += (predicted == labels).sum().item()
+        val_loss.append(v_loss/images.shape[0])
 
-        images = images.to(device)
-        labels = labels.to(device)
+    print('Accuracy of the network on the test images: %d %%' % (
+        100 * correct / total))
 
-        outputs = model(images)
-        v_loss = criterion(outputs, labels)
-        # the class with the highest energy is what we choose as prediction
-        _, predicted = torch.max(outputs.data, 1)
+# print('Finished Training')
+# PATH = './cnn.pth'
+# torch.save(model.state_dict(), PATH)
 
-        total += labels.size(0)
-        correct += (predicted == labels).sum().item()
 
-        for i in range(batch_size):
-            label = labels[i]
-            pred = predicted[i]
-            if (label == pred):
-                n_class_correct[label] += 1
-            n_class_samples[label] += 1
+# with torch.no_grad():
+#     correct = 0
+#     total = 0
+#     n_class_correct = [0 for i in range(4)]
+#     n_class_samples = [0 for i in range(4)]
 
-    val_loss.append(v_loss/images.shape[0])
+#     for i, (images, labels) in enumerate(iter(test_loader)):
 
-print('Accuracy of the network on test images: %d %%' % (
-    100.0 * correct / total))
+#         images = torch.stack(images).to(device)
+#         labels = labels.to(device)
 
-for i in range(7):
-        acc = 100.0 * n_class_correct[i] / n_class_samples[i]
-        print(f'Accuracy of {classes[i]}: {acc} %')
+#         outputs = model(images)
+#         v_loss = criterion(outputs, labels)
+#         # the class with the highest energy is what we choose as prediction
+#         _, predicted = torch.max(outputs.data, 1)
+
+#         total += labels.size(0)
+#         correct += (predicted == labels).sum().item()
+
+#         for i in range(batch_size):
+#             label = labels[i]
+#             pred = predicted[i]
+#             if (label == pred):
+#                 n_class_correct[label] += 1
+#             n_class_samples[label] += 1
+
+#     val_loss.append(v_loss/images.shape[0])
+
+# print('Accuracy of the network on test images: %d %%' % (
+#     100.0 * correct / total))
+
+# for i in range(4):
+#         acc = 100.0 * n_class_correct[i] / n_class_samples[i]
+#         print(f'Accuracy of {classes[i]}: {acc} %')
