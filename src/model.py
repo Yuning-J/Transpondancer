@@ -38,16 +38,16 @@ class CNN(nn.Module):
         # flatten the volume, so we need height and width.also, dont forget the maxpool
         self.linear = Sequential(
             Linear(24320, 512), # the input for  the linear layer coming from a conv one 128*7*9
-            Dropout(0.2, inplace= True),
+            Dropout(0.6, inplace= True),
 
             Linear(512, 256),
-            Dropout(0.2, inplace= True),
+            Dropout(0.6, inplace= True),
 
             Linear(256, 128),
-            Dropout(0.2, inplace= True),
+            Dropout(0.6, inplace= True),
 
             Linear(128, 64),
-            Dropout(0.2, inplace= True),
+            Dropout(0.6, inplace= True),
 
             Linear(64, 4)
         )

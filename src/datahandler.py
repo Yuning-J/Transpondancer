@@ -46,7 +46,7 @@ def custom_transform(padding=(0,0)):
 def collate_function(batch):
     # print(batch)
     samples = [sample[0] for sample in batch]
-    print(samples)
+    # print(samples)
     labels = [sample[1] for sample in batch]
     # print(labels)
     images = []

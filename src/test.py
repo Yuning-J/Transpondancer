@@ -9,7 +9,7 @@ import datahandler as dh
 #pre_preocessor function takes absolute path and batch_size as arguments
 batch_size = 4
 train_loader, test_loader = dh.pre_processor(
-                                'Dataset/', batchsize=batch_size)
+                                '../Dataset/', batchsize=batch_size)
 
 # print(train_loader)
 # print(test_loader)
@@ -27,7 +27,8 @@ def imshow(img):
 # get some random training images
 # dataiter = iter(train_loader)
 images, labels = next(iter(train_loader))
-# print(images.shape)
+print(type(images))
+
 # show images
 imshow(torchvision.utils.make_grid(images))
 # print labels
