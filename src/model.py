@@ -2,9 +2,10 @@
     Sample Model architecutre. We can modify it based on our needs as we start training
 """
 
+import torch
 import torch.nn as nn
 from torch.nn import Linear, ReLU, Sequential, Conv2d, Module, BatchNorm2d, Dropout, MaxPool2d
-from torch.nn.modules import batchnorm
+# from torch.nn.modules import batchnorm
 from torchsummary import summary
 
 
@@ -31,11 +32,12 @@ class CNN(nn.Module):
             BatchNorm2d(128),
             ReLU(),
 
-            MaxPool2d(kernel_size=2, stride=2),
+            #MaxPool2d(kernel_size=2, stride=2),
         )
 
+        # flatten the volume, so we need height and width.also, dont forget the maxpool
         self.linear = Sequential(
-            Linear(128*2*2, 512), # the input for  the linear layer coming from a conv one
+            Linear(24320, 512), # the input for  the linear layer coming from a conv one 128*7*9
             Dropout(0.2, inplace= True),
 
             Linear(512, 256),
@@ -47,7 +49,7 @@ class CNN(nn.Module):
             Linear(128, 64),
             Dropout(0.2, inplace= True),
 
-            Linear(64, 5) #5 classes
+            Linear(64, 4)
         )
 
     def forward(self, x):
@@ -55,3 +57,14 @@ class CNN(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.linear(x)
         return x
+
+
+# device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+# print(f"Current device: ", device)
+
+model = CNN()
+# model = model.cuda()
+model = model.to('cuda:0')
+# print(model.module1.fc1.weight.type())
+# print(model.fc1.weight.type())
+# summary(model, (1,  90,160))
