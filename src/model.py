@@ -16,19 +16,19 @@ class CNN(nn.Module):
 
         self.cnn_layers = Sequential(
             Conv2d(1, 512, kernel_size=3, stride=2),
-            Dropout(0.2, inplace= True),
+            Dropout(0.6, inplace= True),
             BatchNorm2d(512),
             ReLU(inplace=True),
 
             #MaxPool2d(kernel_size=2, stride=2),
 
             Conv2d(512, 256, kernel_size=3, stride=2),
-            Dropout(0.2, inplace= True),
+            Dropout(0.6, inplace= True),
             BatchNorm2d(256),
             ReLU(inplace=True),
 
             Conv2d(256, 128, kernel_size=3, stride=2),
-            Dropout(0.2, inplace= True),
+            Dropout(0.6, inplace= True),
             BatchNorm2d(128),
             ReLU(),
 
@@ -37,7 +37,7 @@ class CNN(nn.Module):
 
         # flatten the volume, so we need height and width.also, dont forget the maxpool
         self.linear = Sequential(
-            Linear(24320, 512), # the input for  the linear layer coming from a conv one 128*7*9
+            Linear(24320, 512), # the input for  the linear layer coming from a conv one 
             Dropout(0.6, inplace= True),
 
             Linear(512, 256),

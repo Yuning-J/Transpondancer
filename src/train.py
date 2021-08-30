@@ -21,7 +21,7 @@ print(f"Current device: ", device)
 
 
 train_loader, test_loader = dh.pre_processor(
-                                '../Dataset',
+                                '../../Dataset',
                                 batchsize= batch_size)
 
 classes = ('Arabesquae', 'Battement', 'Grand_Plié', 'Pirouette')
@@ -43,17 +43,18 @@ criterion = nn.CrossEntropyLoss()
 
 train_losses = []
 val_losses = []
+total_acc = []
 n_total_steps = len(train_loader)
+best_val = 2
 
 for e in range(epochs):
 
     running_loss = 0
-    best_val = 2
 
-    print(f"Epoch: {e}/{epochs}")
+    # print(f"Epoch: {e}/{epochs}")
 
     for i, (images, labels) in enumerate(iter(train_loader)):
-
+        # print("Main Loop", i)
         # print(type(images))
         # print(type(labels))
         
@@ -74,42 +75,50 @@ for e in range(epochs):
         running_loss += loss.item()
         
         # print(i)
+    # print('epoch izz',e)
     if e%2 == 0:
+        # print('Entering val loop')
         train_losses.append(running_loss/images.shape[0])
         # print('Epoch : ',e, "\t Train loss: ", running_loss/images.shape[0])
             
-    correct = 0
-    total = 0
-    val_loss = 0
-    # since we're not training, we don't need to calculate the gradients for our outputs
-    with torch.no_grad():
-        for i, (images, labels) in enumerate(iter(test_loader)):
-            
-            images = torch.stack(images).to(device)
-            labels = labels.to(device)
+        correct = 0
+        total = 0
+        val_loss = 0
+        # since we're not training, we don't need to calculate the gradients for our outputs
+        with torch.no_grad():
+            for i, (images, labels) in enumerate(iter(test_loader)):
+                # print(i)
+                images = torch.stack(images).to(device)
+                labels = labels.to(device)
 
-            outputs = model(images)
-            loss_val = criterion(outputs, labels)
-            val_loss += loss_val.item()
-            # the class with the highest energy is what we choose as prediction
-            _, predicted = torch.max(outputs.data, 1)
-            total += labels.size(0)
-            correct += (predicted == labels).sum().item()
+                outputs = model(images)
+                loss_val = criterion(outputs, labels)
+                val_loss += loss_val.item()
+                # the class with the highest energy is what we choose as prediction
+                _, predicted = torch.max(outputs.data, 1)
+                total += labels.size(0)
+                correct += (predicted == labels).sum().item()
 
         val_loss =  val_loss/images.shape[0]
         val_losses.append(val_loss)
 
-        print('Epoch : ',e, "\t Train loss: ", running_loss/images.shape[0], "\t Validation loss: ", val_loss)
+        acc = 100 * correct / total
+        total_acc.append(acc)
 
+        print('Epoch : ',e, "\t Train loss: {:.2f}".format(running_loss/images.shape[0]),
+            "\t Validation loss: {:.2f}".format(val_loss), "\t Accuracy: {:.2f} %" .format(acc))
+
+        # print(best_val)
         if val_loss < best_val:
             best_val = val_loss
-            PATH = './model/cnn.pth'
+            # print(best_val)
+            PATH = '../model/cnn.pth'
             torch.save(model.state_dict(), PATH)
-            
-    print('Accuracy of the network on the test images: %d %%' % (
-        100 * correct / total))       
+            print("MODEL HAS BEEN SAVED")
+
     scheduler.step()
 
+# plot and save the losses
 fig = plt.figure(figsize=(10,5))
 plt.title("Training and Validation Loss")
 plt.plot(train_losses, label = "train")
@@ -120,3 +129,11 @@ plt.legend()
 fig.savefig('Losses.png')
 
 
+# plot and save the accuracy
+fig = plt.figure(figsize=(10,5))
+plt.title("Accuracy")
+plt.plot(total_acc, label = "acc")
+plt.xlabel("iterations")
+plt.ylabel("Acc.")
+plt.legend()
+fig.savefig('Accuracy.png')
