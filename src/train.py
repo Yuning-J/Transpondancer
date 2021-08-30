@@ -5,12 +5,14 @@ import torch
 import torch.nn as nn
 from torch import optim
 from torchsummary import summary
+import matplotlib.pyplot as plt
+
 
 
 # Hyperparameters. We can tune these as we validate the results
-epochs = 5
+epochs = 100
 batch_size = 32
-learning_rate = 0.001
+learning_rate = 0.0005
 print_every = 40
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -33,19 +35,22 @@ model = CNN().to(device)
 
 
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-#scheduler = ReduceLROnPlateau(optimizer, 'max', factor = 0.5, verbose=True)
+scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1, gamma=0.95)
 criterion = nn.CrossEntropyLoss()
 
 
 #    ******************** Start the training loop here ********************     #
 
-train_loss = []
-val_loss = []
+train_losses = []
+val_losses = []
 n_total_steps = len(train_loader)
 
 for e in range(epochs):
+
     running_loss = 0
-    print(f"Epoch: {e+1}/{epochs}")
+    best_val = 2
+
+    print(f"Epoch: {e}/{epochs}")
 
     for i, (images, labels) in enumerate(iter(train_loader)):
 
@@ -55,7 +60,6 @@ for e in range(epochs):
         images = torch.stack(images).to(device)
         # print(images.is_cuda)
         labels = labels.to(device)
-        # print(labels.is_cuda)
 
         # reset the grdients
         optimizer.zero_grad()
@@ -70,15 +74,13 @@ for e in range(epochs):
         running_loss += loss.item()
         
         # print(i)
-        if i % print_every == 0:
-            print (f'Epoch [{e+1}/{epochs}], Step [{i+1}/{n_total_steps}], Loss: {loss.item():.4f}')
-            print(f"\tIteration: {i}\t Loss: {running_loss/print_every:.4f}")
-            running_loss = 0
+    if e%2 == 0:
+        train_losses.append(running_loss/images.shape[0])
+        # print('Epoch : ',e, "\t Train loss: ", running_loss/images.shape[0])
             
-    train_loss.append(running_loss/images.shape[0])
-
     correct = 0
     total = 0
+    val_loss = 0
     # since we're not training, we don't need to calculate the gradients for our outputs
     with torch.no_grad():
         for i, (images, labels) in enumerate(iter(test_loader)):
@@ -87,52 +89,34 @@ for e in range(epochs):
             labels = labels.to(device)
 
             outputs = model(images)
-            v_loss = criterion(outputs, labels)
+            loss_val = criterion(outputs, labels)
+            val_loss += loss_val.item()
             # the class with the highest energy is what we choose as prediction
             _, predicted = torch.max(outputs.data, 1)
             total += labels.size(0)
             correct += (predicted == labels).sum().item()
-        val_loss.append(v_loss/images.shape[0])
 
+        val_loss =  val_loss/images.shape[0]
+        val_losses.append(val_loss)
+
+        print('Epoch : ',e, "\t Train loss: ", running_loss/images.shape[0], "\t Validation loss: ", val_loss)
+
+        if val_loss < best_val:
+            best_val = val_loss
+            PATH = './model/cnn.pth'
+            torch.save(model.state_dict(), PATH)
+            
     print('Accuracy of the network on the test images: %d %%' % (
-        100 * correct / total))
+        100 * correct / total))       
+    scheduler.step()
 
-# print('Finished Training')
-# PATH = './cnn.pth'
-# torch.save(model.state_dict(), PATH)
+fig = plt.figure(figsize=(10,5))
+plt.title("Training and Validation Loss")
+plt.plot(train_losses, label = "train")
+plt.plot(val_losses, label = "val")
+plt.xlabel("iterations")
+plt.ylabel("Loss")
+plt.legend()
+fig.savefig('Losses.png')
 
 
-# with torch.no_grad():
-#     correct = 0
-#     total = 0
-#     n_class_correct = [0 for i in range(4)]
-#     n_class_samples = [0 for i in range(4)]
-
-#     for i, (images, labels) in enumerate(iter(test_loader)):
-
-#         images = torch.stack(images).to(device)
-#         labels = labels.to(device)
-
-#         outputs = model(images)
-#         v_loss = criterion(outputs, labels)
-#         # the class with the highest energy is what we choose as prediction
-#         _, predicted = torch.max(outputs.data, 1)
-
-#         total += labels.size(0)
-#         correct += (predicted == labels).sum().item()
-
-#         for i in range(batch_size):
-#             label = labels[i]
-#             pred = predicted[i]
-#             if (label == pred):
-#                 n_class_correct[label] += 1
-#             n_class_samples[label] += 1
-
-#     val_loss.append(v_loss/images.shape[0])
-
-# print('Accuracy of the network on test images: %d %%' % (
-#     100.0 * correct / total))
-
-# for i in range(4):
-#         acc = 100.0 * n_class_correct[i] / n_class_samples[i]
-#         print(f'Accuracy of {classes[i]}: {acc} %')
