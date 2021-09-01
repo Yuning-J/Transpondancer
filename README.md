@@ -1,8 +1,8 @@
 # Transpondancer
 
-**Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. 
+How can we name a movement in dance? The movements or vocabulary in dance changes quickly within seconds and there can be quite a lot of them within a few seconds of a dance clip. How do we approach this?
 
-## Introduction
+**Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework by which the problem can be broken into sup-parts and can be solved with the right data and computational power. 
 
 **Objective:**
 
@@ -35,10 +35,3 @@ And sliced pictures in order here:
 ## References
 
 * [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
-
-
-## ToDo:
-
-* Make sure every image is of same size, if not then modify the datahandler to do this.
-* Run the test script to check if everything is working
-* Complete the training loop and start training
