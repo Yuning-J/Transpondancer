@@ -51,6 +51,7 @@ def collate_function(batch):
     # print(labels)
     images = []
     for image in samples:
+        print(type(image))
         # print(image.width)
         # print(image.height)
         ratio = image.width/image.height
