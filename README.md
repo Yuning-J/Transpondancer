@@ -4,9 +4,9 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 **Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework by which the problem can be broken into sup-parts and can be solved with the right data and computational power. 
 
-**Objective:**
+**Objective:** is to generate and print out textual descriptions for each dancing movement in a video. 
 
-**Challenge:**
+**Challenges:** include several points. 1) dance movement is usually in sequential; 2) the same dance movement may have different terminologies or be named under different terms; 3) dance dataset is hard to find, especially for machine-learning model training purposes. 
 
 ## Methods
 
