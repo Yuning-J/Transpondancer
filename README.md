@@ -10,13 +10,9 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 ## Current Method
 
-**Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here)
+**Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here, followed by two sliced pictures)
 
-<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="170" height="170">
-
-And sliced pictures in order here: 
-
-<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
+<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="170" height="170"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
 
 **Step2:** Classification of human poses and movements, using point light display. 
 
