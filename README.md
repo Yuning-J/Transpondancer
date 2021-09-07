@@ -14,11 +14,13 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="170" height="170"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
 
-**Step2:** Classification of human poses and movements, using point light display. 
+**Step2:** Generating skeleton postures using point light display, or directly implementing [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). 
 
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited2.png" width="120" height="150">
 
 **Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced ballent pose is "assemble")
+
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.jpeg" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.jpeg" width="120" height="150">
 
 **Step4:** Generate a step-by-step dance guide. 
 
