@@ -8,7 +8,7 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 **Challenges:** include several points. 1) dance movement is usually in sequential, meaning one movement may cover several essential poses; 2) the same dance movement may have different terminologies or be named under different terms; 3) dance dataset is hard to find, especially for machine-learning model training purposes. 
 
-## Current Method
+## Current Method is based on image classification. 
 
 **Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here, followed by two sliced pictures)
 
@@ -22,13 +22,16 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.jpeg" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.jpeg" width="170" height="200">
 
-**Step4:** Generate a step-by-step dance guide. 
 
 ## Video Data
 
 **Video Scene Elements** include static and dynamic objects. Static objects refer to dancing props like a phone, a door, un umbrella, etc., as well as background props like a table and a door. Dynamic objects include a person and his/her bodyparts or an animal. 
 
 **Video Scene Structure** include the spatial position (meaning if the human object is in the left, the right or other places of the scenes), and the human actions such as head movements, hand actions and other body poses. 
+
+## Dataset for ML model training
+
+**Our own dataset** includes 2 dataset, one for Ballet movement classification, and the other for Locking movement classification. Ballet dataset further contains 100 pictures for Arabesque, 86 pictures for Battement, 
 
 ## References
 
