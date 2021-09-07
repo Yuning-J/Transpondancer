@@ -20,7 +20,7 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 **Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced ballent pose is "assemble")
 
-<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.jpeg" width="150" height="180"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.jpeg" width="150" height="180">
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.jpeg" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.jpeg" width="170" height="200">
 
 **Step4:** Generate a step-by-step dance guide. 
 
