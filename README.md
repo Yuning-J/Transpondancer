@@ -46,7 +46,7 @@ Our methodology includes 2 main parts. The first part is offline machine-learnin
 
 **Image or video classification enhancement** is planned to improve the accuracy of movement classification. 
 
-**Sound classification** will also be added.
+**Sound classification** will also be added. Incorporating sound design tools such as Oscillators, filters, effects, Equalizer (e.g high pass, low pass, notch, etc.) can help recreate the various sounds attributed to the dance styles. Further research into sound engineering is required to be able to implement this. 
 
 ## References
 
