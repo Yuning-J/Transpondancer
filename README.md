@@ -17,7 +17,7 @@ A bird-view framework is presented below to illustrate the methodology.
 
 **Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here, followed by two sliced pictures)
 <p align="center">
-<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
+<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="140" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
 </p>
 
 **Step2:** Generating skeleton postures using point light display, or directly implementing [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). 
