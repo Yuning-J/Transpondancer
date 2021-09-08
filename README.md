@@ -42,6 +42,12 @@ Our methodology includes 2 main parts. The first part is offline machine-learnin
 
 **Our own dataset** includes 2 dataset, one for Ballet movement classification, and the other for Locking movement classification. Ballet dataset further contains 100 pictures for Arabesque, 100 pictures for Piroutte, 100 pictures for Grand Plié, and 86 pictures for Battement. Locking dataset further includes 82 pictures of Scooby Doo, 81 pictures of Skeeter Dabbit, and 66 pictures of Leo Walk. More pictures would be added in the future. 
 
+## Future Works
+
+**Image or video classification enhancement** is planned to improve the accuracy of movement classification. 
+
+**Sound classification** will also be added.
+
 ## References
 
 * [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
