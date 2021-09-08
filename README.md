@@ -27,7 +27,7 @@ A bird-view framework is presented below to illustrate the methodology.
 
 **Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced ballent pose is "assemble")
 <p align="center">
-<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.jpeg" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.jpeg" width="170" height="200">
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.png" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.png" width="170" height="200">
 </p>
 
 **Step4:** Inserting the textual dance movement description into the video.
