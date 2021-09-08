@@ -8,7 +8,11 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 **Challenges:** include several points. 1) dance movement is usually in sequential, meaning one movement may cover several essential poses; 2) the same dance movement may have different terminologies or be named under different terms; 3) dance dataset is hard to find, especially for machine-learning model training purposes. 
 
-## Current Method is based on image classification. 
+## Current Method is based on video sliced image classification. 
+
+A bird-view framework is presented below to illustrate the methodology.
+
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" width="250" height="150">
 
 **Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here, followed by two sliced pictures)
 
