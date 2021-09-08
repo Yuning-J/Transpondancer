@@ -10,7 +10,7 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 ## Current Method is based on video sliced image classification. 
 
-Our methodology includes 2 main parts. The first part is offline machine-learning model training, and the second part is online movement classification. A bird-view framework is presented below to illustrate the online classification part of methodology.
+Our methodology includes 2 main parts. The first part is offline machine-learning model training, and our trained ML model can be found in the folder ["src"](https://github.com/Yuni0217/Transpondancer/tree/main/src). The second part is online movement classification. A bird-view framework is presented below to illustrate the online classification part of methodology.
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" alt="System" width="650px">
 </p>
