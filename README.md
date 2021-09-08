@@ -12,7 +12,7 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 
 A bird-view framework is presented below to illustrate the methodology.
 
-<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" width="450" height="250">
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" width="550" height="350">
 
 **Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here, followed by two sliced pictures)
 
