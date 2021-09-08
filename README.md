@@ -11,8 +11,9 @@ How can we name a movement in dance? The movements or vocabulary in dance change
 ## Current Method is based on video sliced image classification. 
 
 A bird-view framework is presented below to illustrate the methodology.
-
-<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" width="650" height="450">
+<p align="center">
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" alt="System" width="550px">
+</p>
 
 **Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here, followed by two sliced pictures)
 
