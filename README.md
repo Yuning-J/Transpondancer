@@ -3,6 +3,9 @@
 How can we name a movement in dance? The movements or vocabulary in dance changes quickly within seconds and there can be quite a lot of them within a few seconds of a dance clip. How do we approach this?
 
 **Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework by which the problem can be broken into sup-parts and can be solved with the right data and computational power. 
+<p align="center">
+<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/Prototype_gif.gif">
+</p>
 
 **Objective:** is to generate and print out textual descriptions for each dancing movement in a video. 
 
