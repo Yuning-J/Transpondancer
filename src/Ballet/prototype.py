@@ -3,11 +3,18 @@ import numpy as np
 import cv2
 import time
 
-cap = cv2.VideoCapture('../Figures/AlphaPose_video1.avi')
+cap = cv2.VideoCapture('../../Figures/AlphaPose_video1.avi')
 
 if not cap.isOpened():
         print("Cannot open video")
         exit()
+
+frame_width = int(cap.get(3))
+frame_height = int(cap.get(4))
+size = (frame_width, frame_height)
+
+result = cv2.VideoWriter('Prototype.avi', cv2.VideoWriter_fourcc(*'MJPG'), 10, size)
+
 while True:
     ret, frame = cap.read()
     timer = time.time()
@@ -32,7 +39,11 @@ while True:
         # new_timer = str(timer)
         cv2.putText(frame, 'Current Movement: Pirouette ', (1350, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 0), 3, cv2.LINE_AA)
     else:
-        cv2.putText(frame, 'Current Movement: searching...', (1200, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 0), 3, cv2.LINE_AA)
+        cv2.putText(frame, 'Current Movement: Classifying...', (1200, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 0), 3, cv2.LINE_AA)
+
+    # save the frames 
+    if timer <= 5:
+        result.write(frame)
 
     cv2.imshow('Frame', frame)
 
