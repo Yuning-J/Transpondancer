@@ -23,7 +23,7 @@ Our methodology includes 2 main parts. The first part is offline machine-learnin
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="140" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
 </p>
 
-**Step2:** Generating skeleton postures using point light display, or directly implementing [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose). 
+**Step2:** Generating skeleton postures using point light display, or directly implementing [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose). 
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited2.png" width="120" height="150">
 </p>
@@ -53,4 +53,4 @@ Our methodology includes 2 main parts. The first part is offline machine-learnin
 
 ## References
 
-* [OpenPose](https://github.com/CMU-Perceptual-Computing-Lab/openpose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
+* [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
