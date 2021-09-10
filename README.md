@@ -1,24 +1,24 @@
 # Transpondancer
 
-How can we name a movement in dance? The movements or vocabulary in dance changes quickly within seconds and there can be quite a lot of them within a few seconds of a dance clip. How do we approach this?
+Each dance creates another body-relation-system of knowledge in sensing, anatomically structures, emotional codings of body parts, metaphors, expression and imagination. 
+The vocabulary itself is complex and reflects synaesthetic relations of body and memory, historical transformations and body based knowledge, but there is no dance encyclopedia yet. Then how can we name a movement in dance? Moreover, How can AI help in achieving this for multiple genres?
 
-**Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework by which the problem can be broken into sup-parts and can be solved with the right data and computational power. 
+**Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework along with a prototype that will be a real product given sufficient data. 
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/Prototype_gif.gif">
 </p>
 
-**Objective:** is to generate and print out textual descriptions for each dancing movement in a video. 
+## Alternative
+Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles and produced different offline ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres. We have also trained multiple models for each genre that can be either used directly or can be a starting point for future models.
 
-**Challenges:** include several points. 1) dance movement is usually in sequential, meaning one movement may cover several essential poses; 2) the same dance movement may have different terminologies or be named under different terms; 3) dance dataset is hard to find, especially for machine-learning model training purposes. 
 
-## Current Method is based on video sliced image classification. 
-
-Our methodology includes 2 main parts. The first part is offline machine-learning model training, and our trained ML model can be found in the folder ["src"](https://github.com/Yuni0217/Transpondancer/tree/main/src). The second part is online movement classification. A bird-view framework is presented below to illustrate the online classification part of methodology.
+## Framework
+Following this framwork is how one can tackle this challege. Below we are going to breakdown the framework and provide a walk through.
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" alt="System" width="650px">
 </p>
 
-**Step1:** Slicing the dancing video dataset. (e.g. a short part of ballet dance here, followed by two sliced pictures)
+**Step1:** Extracting the frames from the dance video dataset. (e.g. a short part of ballet dance, followed by two sliced frames)
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/ballet.gif" width="140" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletslice2.png" width="120" height="150">
 </p>
@@ -30,10 +30,12 @@ Our methodology includes 2 main parts. The first part is offline machine-learnin
 
 **Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced ballent pose is "assemble")
 
-**Step4:** Inserting the textual dance movement description into the video.
+**Step4:** Inserting the textual dance movement description into the frame and re-creating the video.
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.png" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.png" width="170" height="200">
 </p>
+
+# Checkpoint1
 
 ## Video Data
 
