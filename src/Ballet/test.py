@@ -36,7 +36,7 @@ print(' '.join('%5s' % classes[labels[j]] for j in range(batch_size)))
 
 
 """
-    If you run  the script, it will return 3 outputs. 
+    If you run the script and it returns the following 3 outputs, then your dataloaders are working.
 
     1. displays the images
     2. Torch size such as ([2 ,1 ,x, x)] where 2 is the batch size of images that are being loaded,

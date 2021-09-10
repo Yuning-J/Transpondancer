@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 
 
 
-# Hyperparameters. We can tune these as we validate the results
+# Hyperparameters that we can tune
 epochs = 1000
 batch_size = 32
 learning_rate = 0.0005
@@ -34,6 +34,7 @@ model = CNN().to(device)
 # (summary(model, (1, 90, 160))) # prints the summary of the model. 90,160 is image size
 
 
+# define the optimizer, scheduler and loss
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 scheduler = torch.optim.lr_scheduler.StepLR(optimizer, 1, gamma=0.95)
 criterion = nn.CrossEntropyLoss()
@@ -51,39 +52,30 @@ for e in range(epochs):
 
     running_loss = 0
 
-    # print(f"Epoch: {e}/{epochs}")
-
     for i, (images, labels) in enumerate(iter(train_loader)):
-        # print("Main Loop", i)
-        # print(type(images))
-        # print(type(labels))
         
         images = torch.stack(images).to(device)
-        # print(images.is_cuda)
         labels = labels.to(device)
 
         # reset the grdients
         optimizer.zero_grad()
         
-        output = model(images)   # 1) Forward pass
-        loss = criterion(output, labels) # 2) Compute loss
-        # print(loss.is_cuda)
+        output = model(images)              # 1) Forward pass
+        loss = criterion(output, labels)    # 2) Compute loss
 
-        loss.backward()                  # 3) Backward pass
-        optimizer.step()                 # 4) Update model
+        loss.backward()                     # 3) Backward pass
+        optimizer.step()                    # 4) Update model
         
         running_loss += loss.item()
         
-        # print(i)
-    # print('epoch izz',e)
     if e%2 == 0:
         # print('Entering val loop')
         train_losses.append(running_loss/images.shape[0])
-        # print('Epoch : ',e, "\t Train loss: ", running_loss/images.shape[0])
             
         correct = 0
         total = 0
         val_loss = 0
+
         # since we're not training, we don't need to calculate the gradients for our outputs
         with torch.no_grad():
             for i, (images, labels) in enumerate(iter(test_loader)):
@@ -108,10 +100,9 @@ for e in range(epochs):
         print('Epoch : ',e, "\t Train loss: {:.2f}".format(running_loss/images.shape[0]),
             "\t Validation loss: {:.2f}".format(val_loss), "\t Accuracy: {:.2f} %" .format(acc))
 
-        # print(best_val)
+        # Save the model only if the val_loss decreases w.r.t previous loss
         if val_loss < best_val:
             best_val = val_loss
-            # print(best_val)
             PATH = '../model/3class_ballet_10000e_cnn.pth'
             torch.save(model.state_dict(), PATH)
             print("MODEL HAS BEEN SAVED")

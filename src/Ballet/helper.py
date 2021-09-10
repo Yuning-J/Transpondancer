@@ -8,6 +8,7 @@ paths = glob("Dataset/Train/Pirouette/*")
 
 all_ratios= []
 
+# prints paths of all images 
 for path in paths:
     image = Image.open(path)
     ratio = np.round(image.width/image.height, 2)

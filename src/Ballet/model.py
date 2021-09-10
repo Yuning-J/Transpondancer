@@ -2,10 +2,8 @@
     Sample Model architecutre. We can modify it based on our needs as we start training
 """
 
-import torch
 import torch.nn as nn
-from torch.nn import Linear, ReLU, Sequential, Conv2d, Module, BatchNorm2d, Dropout, MaxPool2d
-# from torch.nn.modules import batchnorm
+from torch.nn import Linear, ReLU, Sequential, Conv2d, BatchNorm2d, Dropout, MaxPool2d
 from torchsummary import summary
 
 
@@ -64,7 +62,6 @@ class CNN(nn.Module):
 
 model = CNN()
 # model = model.cuda()
-model = model.to('cuda:0')
-# print(model.module1.fc1.weight.type())
-# print(model.fc1.weight.type())
+model = model.to('cuda:0') # send the model to device cause sometimes there are errors regarding device
+
 # print(summary(model, (1,  90,160)))

@@ -1,14 +1,16 @@
 
-import numpy as np
+# do the necesseary imports
 import cv2
 import time
 
+# load the video
 cap = cv2.VideoCapture('../../Figures/AlphaPose_video1.avi')
 
 if not cap.isOpened():
         print("Cannot open video")
         exit()
 
+# size of frames to save the video later on
 frame_width = int(cap.get(3))
 frame_height = int(cap.get(4))
 size = (frame_width, frame_height)
@@ -35,8 +37,8 @@ while True:
     cframe = cap.get(cv2.CAP_PROP_POS_FRAMES) # retrieves the current frame number
     timer = (cframe / fps)
 
+    # write the movement on screen
     if 2.5 <= timer <= 4:
-        # new_timer = str(timer)
         cv2.putText(frame, 'Current Movement: Pirouette ', (1350, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 0), 3, cv2.LINE_AA)
     else:
         cv2.putText(frame, 'Current Movement: Classifying...', (1200, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 0), 3, cv2.LINE_AA)

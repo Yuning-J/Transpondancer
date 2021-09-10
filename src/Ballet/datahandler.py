@@ -1,6 +1,5 @@
+# do the imports
 import torch
-import numpy as np
-from PIL import Image
 from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
@@ -43,17 +42,14 @@ def custom_transform(padding=(0,0)):
                         
     return custom
 
+"""
+    Since images are of different size in the current problem. This custom function transforms everything 
+    to a defined shape by adding respective padding"""
 def collate_function(batch):
-    # print(batch)
     samples = [sample[0] for sample in batch]
-    # print(samples)
     labels = [sample[1] for sample in batch]
-    # print(labels)
     images = []
     for image in samples:
-        # print(type(image))
-        # print(image.width)
-        # print(image.height)
         ratio = image.width/image.height
         # print(ratio)
         if 16/9 -0.03<= ratio <= 16/9 +0.03:
@@ -68,26 +64,19 @@ def collate_function(batch):
                 transform = custom_transform((x,0))
                 # print(transform)
                 image = transform(image)
-        # print(image.shape)
-        # print(image.shape[2]/image.shape[1])
-        # print(type(image))
         images.append(image)
-        # print(images)
         
     return images, torch.tensor(labels)
 
 # define a function which takes in path of root_directory, batchsize anad returns the dataloaders
 # for both train and test.
 def pre_processor(root_dir, batchsize):
-    # apply the transformation to both train and test data
     train_data = datasets.ImageFolder(root_dir + '/Train')
     test_data = datasets.ImageFolder(root_dir + '/Validation')
 
     # create the dataloaders
     train_loader = DataLoader(train_data, batch_size=batchsize, collate_fn=collate_function,  shuffle=True)
 
-    # train_loader = DataLoader(train_data, batch_size=batchsize,
-    #                                         shuffle=True)
     test_loader = DataLoader(test_data, batch_size=batchsize, collate_fn=collate_function,
                                             shuffle=False)
 
