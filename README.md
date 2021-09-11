@@ -28,7 +28,7 @@ Following this framwork is how one can tackle this challege. Below we are going 
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited1.png" width="120" height="150"> <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/balletedited2.png" width="120" height="150">
 </p>
 
-**Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced ballent pose is "assemble")
+**Step3:** Biological motion perception, or correlation between human movement to textual descriptions. (The first sliced ballet pose is "second arabesque", and the second sliced  ballent pose is "assemble")
 
 **Step4:** Inserting the textual dance movement description into the frame and re-creating the video.
 <p align="center">
@@ -37,11 +37,6 @@ Following this framwork is how one can tackle this challege. Below we are going 
 
 # Checkpoint1
 
-## Video Data
-
-**Video Scene Elements** include static and dynamic objects. Static objects refer to dancing props like a phone, a door, un umbrella, etc., as well as background props like a table and a door. Dynamic objects include a person and his/her bodyparts or an animal. 
-
-**Video Scene Structure** include the spatial position (meaning if the human object is in the left, the right or other places of the scenes), and the human actions such as head movements, hand actions and other body poses. 
 
 ## Dataset for ML model training
 
