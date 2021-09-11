@@ -39,9 +39,9 @@ while True:
 
     # write the movement on screen
     if 2.5 <= timer <= 4:
-        cv2.putText(frame, 'Current Movement: Pirouette ', (1350, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 0), 3, cv2.LINE_AA)
+        cv2.putText(frame, 'Current Movement: Pirouette ', (1350, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3, cv2.LINE_AA)
     else:
-        cv2.putText(frame, 'Current Movement: Classifying...', (1200, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (100, 255, 0), 3, cv2.LINE_AA)
+        cv2.putText(frame, 'Current Movement: Classifying...', (1200, 70), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 3, cv2.LINE_AA)
 
     # save the frames 
     if timer <= 5:
