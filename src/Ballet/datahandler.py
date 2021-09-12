@@ -36,6 +36,7 @@ def custom_transform(padding=(0,0)):
                         transforms.Grayscale(num_output_channels=1),
                         transforms.Pad(padding, fill=0),
                         transforms.Resize((90, 160)),
+                        transforms.RandomHorizontalFlip(),
                         transforms.ToTensor(),
                         transforms.Normalize([0.5],
                                             [0.5])])

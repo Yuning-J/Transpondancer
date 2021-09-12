@@ -21,7 +21,7 @@ print(f"Current device: ", device)
 
 
 train_loader, test_loader = dh.pre_processor(
-                                '../../Dataset',
+                                '../../../Dataset',
                                 batchsize= batch_size)
 
 classes = ('Arabesquae', 'Grand_Plié', 'Pirouette')
@@ -103,7 +103,7 @@ for e in range(epochs):
         # Save the model only if the val_loss decreases w.r.t previous loss
         if val_loss < best_val:
             best_val = val_loss
-            PATH = '../model/3class_ballet_10000e_cnn.pth'
+            PATH = '../../models/ballet_1000epochs_cnn.pth'
             torch.save(model.state_dict(), PATH)
             print("MODEL HAS BEEN SAVED")
 
@@ -117,7 +117,7 @@ plt.plot(val_losses, label = "val")
 plt.xlabel("iterations")
 plt.ylabel("Loss")
 plt.legend()
-fig.savefig('3class_Losses_10ke.png')
+fig.savefig('Losses_1kepochs.png')
 
 
 # plot and save the accuracy
@@ -127,4 +127,4 @@ plt.plot(total_acc, label = "acc")
 plt.xlabel("iterations")
 plt.ylabel("Acc.")
 plt.legend()
-fig.savefig('3class_Accuracy_10ke.png')
+fig.savefig('Accuracy_1kepochs.png')
