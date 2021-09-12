@@ -5,7 +5,7 @@ The vocabulary itself is complex and reflects synaesthetic relations of body and
 
 **Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework along with a prototype that will be a real product given sufficient data. 
 <p align="center">
-<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/Prototype_gif.gif">
+<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/Prototype_gif.gif">
 </p>
 
 ## Alternative
@@ -35,12 +35,28 @@ Following this framwork is how one can tackle this challege. Below we are going 
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.png" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.png" width="170" height="200">
 </p>
 
-# Checkpoint1
 
+## Dataset for the Deep-Learning Model
 
-## Dataset for ML model training
+**Our own dataset** includes 2 [datasets](https://github.com/Yuni0217/Transpondancer/tree/main/Data), one for Ballet movement classification, and the other for Locking movement classification. Upon extracting the respectice Dataset, make sure the files are organized in the following format to use the power of PyTorch Dataloaders. 
 
-**Our own dataset** includes 2 [datasets](https://github.com/Yuni0217/Transpondancer/tree/main/Data), one for Ballet movement classification, and the other for Locking movement classification. Ballet dataset further contains 100 pictures for Arabesque, 100 pictures for Piroutte, 100 pictures for Grand Plié, and 86 pictures for Battement. Locking dataset further includes 101 pictures of Pointing, 82 pictures of Scooby Doo, 81 pictures of Skeeter Dabbit, and 66 pictures of Leo Walk. More pictures would be added in the future. 
+root_dir <br />
+&nbsp;&nbsp;&nbsp;|_Train <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Arabesque <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_xxx.png <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......... <br /> 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......... <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Pirouette <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_xxx.png <br />
+&nbsp;&nbsp;&nbsp;&nbsp;|_Validation <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Arabesque <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_xxx.png <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......... <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;......... <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_Pirouette <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|_xxx.png <br />
+
+Due to time contraints, then number of images that we could collect are limited for now we are constantly adding more and more and new contributions are always welcome via pull requests.
 
 ## Future Works
 
