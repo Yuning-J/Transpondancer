@@ -32,7 +32,11 @@ Following this framwork is how one can tackle this challege. Below we are going 
 </p>
 
 ## Solution
-Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles and produced offline ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres. We have also trained multiple models for each genre that can either be used directly or can be a starting point for future models.
+- Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles.
+- Since most of the images are directly taken from the internet, there is a definite need of preprocessing them before passing them to the model. This is done by with the help of [data_handler script](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py) which transforms the images into specified shape and returns batches for both train and validation.
+- Finally, we've trained and produced ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres or can also be a starting point for future models.
+- Below you can take a look at the workflow process
+
 
 ## Dataset for the Deep-Learning Model
 **Our own dataset** includes 2 [datasets](https://github.com/Yuni0217/Transpondancer/tree/main/Data), one for Ballet movement classification, and the other for Locking movement classification. Upon extracting the respectice Dataset, make sure the files are organized in the format that specifies [here](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py)
