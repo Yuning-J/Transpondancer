@@ -112,4 +112,4 @@ python train.py
 ## References
 
 * [PyTorch](https://github.com/pytorch/pytorch) for training deep-learning models.
-* [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
+* [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose) for real-time multi-person keypoint detection for body, face, hands, and foot estimations.
