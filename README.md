@@ -1,5 +1,4 @@
 # Transpondancer
-
 Each dance creates another body-relation-system of knowledge in sensing, anatomically structures, emotional codings of body parts, metaphors, expression and imagination. 
 The vocabulary itself is complex and reflects synaesthetic relations of body and memory, historical transformations and body based knowledge, but there is no dance encyclopedia yet. Then how can we name a movement in dance? Moreover, How can AI help in achieving this in a generalized manner?
 
@@ -32,20 +31,41 @@ Following this framwork is how one can tackle this challege. Below we are going 
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.png" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.png" width="170" height="200">
 </p>
 
-## Alternative
-Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles and produced different offline ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres. We have also trained multiple models for each genre that can be either used directly or can be a starting point for future models.
-## Dataset for the Deep-Learning Model
+## Solution
+Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles and produced offline ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres. We have also trained multiple models for each genre that can either be used directly or can be a starting point for future models.
 
+## Dataset for the Deep-Learning Model
 **Our own dataset** includes 2 [datasets](https://github.com/Yuni0217/Transpondancer/tree/main/Data), one for Ballet movement classification, and the other for Locking movement classification. Upon extracting the respectice Dataset, make sure the files are organized in the format that specifies [here](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py)
 
-Although the number of images that we could collect are limited due to time contraints, we are constantly adding more and more and new contributions are always welcome via pull requests.
+Although the number of images that we could collect are limited due to time contraints and resources, we are constantly adding more and more and any new contributions towards the dataset are always welcome.
 
-## Future Works
+## Installation
+1. Clone the repo using the following command:
+```bash
+git clone https://github.com/Yuni0217/Transpondancer.git
+```
+2. Create a virtual environment with Python 3.7. (For this step I will assume that you are able to create a virtual environment with `virtualenv` or `conda`, but in any case you can check an example [here](https://realpython.com/python-virtual-environments-a-primer/).)
 
-**Image or video classification enhancement** is planned to improve the accuracy of movement classification. 
+3. Install requirements using `pip`:
+```bash
+pip install -r requirements.txt
+```
 
-**Sound classification** will also be added. Incorporating sound design tools such as Oscillators, filters, effects, Equalizer (e.g high pass, low pass, notch, etc.) can help recreate the various sounds attributed to the dance styles. Further research into sound engineering is required to be able to implement this. 
+4. Extract the datasets in the [Data](https://github.com/Yuni0217/Transpondancer/tree/main/Data) folder and run the following command. If you are able to see batches of images in a grid-like view, you are good to go.
+```bash
+python test.py
+```
 
+5 . To start training the model, run the following command. You can always tune the parameters in the `train.py` script
+```bash
+python train.py
+```
+
+## Future Work
+
+- Classfication of movement in an image or a video by following **time series** approach is planned to reduce the error. 
+
+- **Sound classification** will also be added by incorporating sound design tools such as Oscillators, filters, effects, Equalizer (e.g high pass, low pass, notch, etc.) can help    recreate the various sounds attributed to the dance styles.
 ## References
 
 * [AlphaPose](https://github.com/MVIG-SJTU/AlphaPose) for real-time multi-person keypoint detection library for body, face, hands, and foot estimations.
