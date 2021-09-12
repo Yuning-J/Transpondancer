@@ -40,7 +40,7 @@ Following this framwork is how one can tackle this challege. Below we are going 
 
 **Our own dataset** includes 2 [datasets](https://github.com/Yuni0217/Transpondancer/tree/main/Data), one for Ballet movement classification, and the other for Locking movement classification. Upon extracting the respectice Dataset, make sure the files are organized in the format that specifies [here](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py)
 
-Due to time contraints, then number of images that we could collect are limited for now we are constantly adding more and more and new contributions are always welcome via pull requests.
+Although the number of images that we could collect are limited due to time contraints, we are constantly adding more and more and new contributions are always welcome via pull requests.
 
 ## Future Works
 
