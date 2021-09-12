@@ -1,15 +1,12 @@
 # Transpondancer
 
 Each dance creates another body-relation-system of knowledge in sensing, anatomically structures, emotional codings of body parts, metaphors, expression and imagination. 
-The vocabulary itself is complex and reflects synaesthetic relations of body and memory, historical transformations and body based knowledge, but there is no dance encyclopedia yet. Then how can we name a movement in dance? Moreover, How can AI help in achieving this for multiple genres?
+The vocabulary itself is complex and reflects synaesthetic relations of body and memory, historical transformations and body based knowledge, but there is no dance encyclopedia yet. Then how can we name a movement in dance? Moreover, How can AI help in achieving this in a generalized manner?
 
 **Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework along with a prototype that will be a real product given sufficient data. 
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/Prototype_gif.gif">
 </p>
-
-## Alternative
-Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles and produced different offline ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres. We have also trained multiple models for each genre that can be either used directly or can be a starting point for future models.
 
 
 ## Framework
@@ -35,7 +32,8 @@ Following this framwork is how one can tackle this challege. Below we are going 
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.png" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.png" width="170" height="200">
 </p>
 
-
+## Alternative
+Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles and produced different offline ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres. We have also trained multiple models for each genre that can be either used directly or can be a starting point for future models.
 ## Dataset for the Deep-Learning Model
 
 **Our own dataset** includes 2 [datasets](https://github.com/Yuni0217/Transpondancer/tree/main/Data), one for Ballet movement classification, and the other for Locking movement classification. Upon extracting the respectice Dataset, make sure the files are organized in the format that specifies [here](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py)
