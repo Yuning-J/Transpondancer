@@ -1,14 +1,51 @@
 # Transpondancer
+
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/Yuni0217/Transpondancer">
+    <img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/Prototype_gif.gif" alt="Logo">
+  </a>
+  <br />
+
+  <!-- Badges -->
+  <img src="https://img.shields.io/github/repo-size/Yuni0217/Transpdance?style=for-the-badge" alt="GitHub repo size" height="25">
+  <img src="https://img.shields.io/github/last-commit/Yuni0217/Transpdance?style=for-the-badge" alt="GitHub last commit" height="25">
+  <br />
+ 
+
+  <h3 align="center">Transpondancer</h3>
+  <p align="center">
+    Transmit, Responce, Dance it.
+    <br />
+    <a href="https://www.youtube.com/watch?v=ub82Xb1C8os"><strong>View the demo »</strong></a>
+    <br />
+  </p>
+</p>
+
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
+
+* [About the Project](#about-the-project)
+  * [Motivation](#motivation)
+  * [Framework](#framework)
+* [Solution](#solution)
+* [Dataset](#dataset-for-the-deep-learning-model)
+* [Installation](#installation)
+* [Future Work](#future-work)
+* [References](#references)
+
+## About the Project
 Each dance creates another body-relation-system of knowledge in sensing, anatomically structures, emotional codings of body parts, metaphors, expression and imagination. 
 The vocabulary itself is complex and reflects synaesthetic relations of body and memory, historical transformations and body based knowledge, but there is no dance encyclopedia yet. Then how can we name a movement in dance? Moreover, How can AI help in achieving this in a generalized manner?
 
 **Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework along with a prototype that will be a real product given sufficient data. 
-<p align="center">
-<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/Prototype_gif.gif">
-</p>
+
+### Motivation
+How to name a movement where each dance creates another body-relation-system of knowledge in sensing, anatomically structures and emotional codings of body parts? The Transpondancer address these issues through movement poetics and multilingual body knowledge. Dance Studies, Choreographers, Dancers and everyone who wants to get to know more about dance background, vocabulary and the ways of movement creation will take part in the corresponding process. Oral vocabulary that has not been written down will take part and saved from disappearing. It's a fluid dance encyclopedia on the move. 
 
 
-## Framework
+### Framework
 Following this framwork is how one can tackle this challege. Below we are going to breakdown the framework and provide a walk through.
 <p align="center">
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/OnlineClassification.png" alt="System" width="650px">
