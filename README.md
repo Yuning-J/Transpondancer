@@ -87,7 +87,7 @@ Although the number of images that we could collect are limited due to time cont
 ```bash
 git clone https://github.com/Yuni0217/Transpondancer.git
 ```
-2. Create a virtual environment with Python 3.7. (For this step I will assume that you are able to create a virtual environment with `virtualenv` or `conda`, but in any case you can check an example [here](https://realpython.com/python-virtual-environments-a-primer/).)
+2. Create a virtual environment with Python 3.7. (For this step I will assume that you are able to create a virtual environment with `virtualenv`, but in any case you can check an example [here](https://realpython.com/python-virtual-environments-a-primer/).)
 
 3. Install requirements using `pip`:
 ```bash
