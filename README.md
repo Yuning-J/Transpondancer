@@ -42,7 +42,9 @@ The vocabulary itself is complex and reflects synaesthetic relations of body and
 **Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework along with a prototype that will be a real product given sufficient data. 
 
 ### Motivation
-How to name a movement where each dance creates another body-relation-system of knowledge in sensing, anatomically structures and emotional codings of body parts? The Transpondancer address these issues through movement poetics and multilingual body knowledge. Dance Studies, Choreographers, Dancers and everyone who wants to get to know more about dance background, vocabulary and the ways of movement creation will take part in the corresponding process. Oral vocabulary that has not been written down will take part and saved from disappearing. It's a fluid dance encyclopedia on the move. 
+- How to name a movement where each dance creates another body-relation-system of knowledge in sensing, anatomically structures and emotional codings of body parts?
+- The Transpondancer address these issues through movement poetics and multilingual body knowledge. Dance Studies, Choreographers, Dancers and everyone who wants to get to know more about dance background, vocabulary and the ways of movement creation will take part in the corresponding process.
+- Oral vocabulary that has not been written down will take part and saved from disappearing. It's a fluid dance encyclopedia on the move. 
 
 
 ### Framework
