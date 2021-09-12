@@ -5,7 +5,7 @@ The vocabulary itself is complex and reflects synaesthetic relations of body and
 
 **Transpondancer** is a tool that automatically generates a textual step-by-step dance guide from any dancing video. In order to achieve this, we have proposed a framework along with a prototype that will be a real product given sufficient data. 
 <p align="center">
-<img src="https://github.com/Yuni0217/Transpdance/blob/main/Figures/Prototype_gif.gif">
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/Prototype_gif.gif">
 </p>
 
 ## Alternative
