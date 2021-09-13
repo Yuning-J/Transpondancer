@@ -30,8 +30,8 @@
 * [About the Project](#about-the-project)
   * [Motivation](#motivation)
   * [Framework](#framework)
-* [Solution](#solution)
 * [Dataset](#dataset-for-the-deep-learning-model)
+* [Solution](#solution)
 * [Installation](#installation)
 * [Future Work](#future-work)
 * [References](#references)
@@ -71,24 +71,26 @@ Following this framwork is how one can tackle this challege. Below we are going 
 <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed1.png" width="170" height="200"> <img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/balletNamed2.png" width="170" height="200">
 </p>
 
-## Solution
-- Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles.
-- Since most of the images are directly taken from the internet, there is a definite need of preprocessing them before passing them to the model. This is done by with the help of [data_handler script](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py) which transforms the images into specified shape and returns batches for both train and validation.
-- Finally, we've trained and produced ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres or can also be a starting point for future models.
-- Here is how the workflow process looks like,
-<p align="center">
-<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/Workflow.PNG" width=700 height=200>
-</p>
-
 ## Dataset for the Deep-Learning Model
 **Our own dataset** includes 2 [datasets](https://github.com/Yuni0217/Transpondancer/tree/main/Data), one for Ballet movement classification, and the other for Locking movement classification. Upon extracting the respectice Dataset, make sure the files are organized in the format that specifies [here](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py)
 
 Although the number of images that we could collect are limited due to time contraints and resources, we are constantly adding more and more and any new contributions towards the dataset are always welcome.
 
+## Solution
+- Finding large amounts of data was and is a great challenge for most of the problems in AI. As it is also the case for Transpondancer, we have collected our own ["dataset"](https://github.com/Yuni0217/Transpondancer/tree/main/Data) of different dance styles.
+- Since most of the images are directly taken from the internet, there is a definite need of preprocessing them before passing them to the model. This is done by with the help of [data_handler script](https://github.com/Yuni0217/Transpondancer/blob/main/src/Ballet/datahandler.py) which transforms the images into specified shape and returns batches for both train and validation.
+- Finally, we've trained and produced ["Deep-learning models"](https://github.com/Yuni0217/Transpondancer/tree/main/models) from which one can be able to identify dance pose of selected genres or can also be a starting point for future models.
+- As some of the models are too big to be uploaded here, they are uploaded to google driver and can be accessed with this [link](https://drive.google.com/drive/folders/1yuKeE1WE-RuAPukYZXMvNR44FFZCTOo4?usp=sharing)
+- Here is how the workflow process looks like,
+<p align="center">
+<img src="https://github.com/Yuni0217/Transpondancer/blob/main/Figures/Workflow.PNG" width=700 height=200>
+</p>
+
+
 ## Installation
 1. Clone the repo using the following command:
 ```bash
-git clone https://github.com/Yuni0217/Transpondancer.git
+git clone https://github.com/Yuni0217/Transpondancer.git 
 ```
 2. Create a virtual environment with Python 3.7. (For this step I will assume that you are able to create a virtual environment with `virtualenv`, but in any case you can check an example [here](https://realpython.com/python-virtual-environments-a-primer/).)
 
