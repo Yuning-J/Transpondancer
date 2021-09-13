@@ -11,6 +11,7 @@
   <!-- Badges -->
   <img src="https://img.shields.io/github/repo-size/Yuni0217/Transpdance?style=for-the-badge" alt="GitHub repo size" height="25">
   <img src="https://img.shields.io/github/last-commit/Yuni0217/Transpdance?style=for-the-badge" alt="GitHub last commit" height="25">
+  <img src="https://img.shields.io/github/license/Yuni0217/Transpdance?style=for-the-badge" alt="License" height="25">
   <br />
  
 
