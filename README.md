@@ -19,7 +19,7 @@
   <p align="center">
     Transmit, Responce, Dance it.
     <br />
-    <a href="https://www.youtube.com/watch?v=ub82Xb1C8os"><strong>View the demo »</strong></a>
+    <a href="https://www.youtube.com/watch?v=kmX7v3Qewd4&t=2s"><strong>View the demo »</strong></a>
     <br />
   </p>
 </p>
