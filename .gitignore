@@ -3,3 +3,4 @@ src/__pycache__/datahandler.cpython-39.pyc
 src/__pycache__/model.cpython-39.pyc
 models/3class_ballet_10000e_cnn.pth
 models/ballet_1000epochs_cnn.pth
+models/Locking_1kepochs_cnn.pth
