@@ -78,6 +78,14 @@ for e in range(epochs):
 
         # since we're not training, we don't need to calculate the gradients for our outputs
         with torch.no_grad():
+
+        # torch.inference is torch.no_grad on steroids
+        
+        # with torch.inference_mode():
+        # InferenceMode is a new context manager analogous to no_grad to be used when you are certain your 
+        # operations will have no interactions with autograd (e.g., model training). Code run under this mode gets better 
+        # performance by disabling view tracking and version counter bumps.
+
             for i, (images, labels) in enumerate(iter(test_loader)):
                 # print(i)
                 images = torch.stack(images).to(device)
